@@ -4,104 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechSolutions | Expertos en Desarrollo Digital</title>
+    <meta name="description"
+        content="Minddev: expertos en desarrollo web, aplicaciones móviles y soluciones digitales.">
+    <meta name="keywords" content="desarrollo web, apps móviles, SEO, hosting, tecnología, Perú">
+    <meta name="author" content="Minddev">
+    <title>Minddev | Expertos en Desarrollo Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-        :root {
-            --primary: #4F46E5;
-            --secondary: #7C3AED;
-            --accent: #EC4899;
-            --dark: #1F2937;
-            --light: #F9FAFB;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-        }
-
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-
-        .wave svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 100px;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        .navbar-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 
 <body>
+    <!-- Top Bar con texto en movimiento -->
+    <div class="bg-indigo-600 text-white text-sm py-2 overflow-hidden">
+        <div class="whitespace-nowrap flex space-x-12 animate-marquee">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-code"></i><span>Desarrollo Web</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-mobile-alt"></i><span>Aplicaciones Móviles</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-shield-alt"></i><span>Mantenimiento Web</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-chalkboard-teacher"></i><span>Capacitaciones</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-search-dollar"></i><span>SEO & Marketing</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-cloud"></i><span>Hosting & Cloud</span>
+            </div>
+            <!-- Repetición para llenar espacio -->
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-code"></i><span>Desarrollo Web</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-mobile-alt"></i><span>Aplicaciones Móviles</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-shield-alt"></i><span>Mantenimiento Web</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-chalkboard-teacher"></i><span>Capacitaciones</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-search-dollar"></i><span>SEO & Marketing</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-cloud"></i><span>Hosting & Cloud</span>
+            </div>
+        </div>
+    </div>
     <!-- Navbar -->
-    <nav class="fixed w-full bg-white navbar-shadow z-50">
+    <nav class="w-full bg-white shadow-md z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-24">
+                <!-- Logo Tipográfico -->
                 <div class="flex-shrink-0">
-                    <img class="h-12"
-                        src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7b72891c-60ca-47f9-ba78-cbfe07eeb00e.png"
-                        alt="Logo TechSolutions - Especialistas en desarrollo web y móvil">
+                    <h1 class="text-3xl font-extrabold text-indigo-600 tracking-tight">
+                        Mind<span class="text-gray-800">dev</span>
+                    </h1>
+                    <p class="text-xs text-gray-500 -mt-1">Desarrollo Web & Apps</p>
                 </div>
+
+                <!-- Links del menú -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-8">
                         <a href="#inicio" class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Inicio</a>
@@ -114,9 +82,13 @@
                         <a href="#contacto"
                             class="text-gray-700 hover:text-indigo-600 px-3 py-2 font-medium">Contacto</a>
                         <a href="#contacto"
-                            class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">Cotizar</a>
+                            class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">
+                            Cotizar
+                        </a>
                     </div>
                 </div>
+
+                <!-- Menú móvil -->
                 <div class="md:hidden flex items-center">
                     <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -252,7 +224,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Proyecto 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover relative">
                     <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d97276af-7308-41f1-aa26-c16658fc415b.png"
                         alt="E-commerce moderno con diseño limpio y funcionalidades avanzadas"
                         class="w-full h-48 object-cover">
@@ -260,41 +232,74 @@
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Tienda Online</h3>
                         <p class="text-gray-600 mb-4">Plataforma e-commerce con pasarela de pagos y gestión de
                             inventario.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">React</span>
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">Node.js</span>
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">MongoDB</span>
+                        <div class="flex items-center justify-between mt-4">
+                            <!-- Tecnologías -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">React</span>
+                                <span
+                                    class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">Node.js</span>
+                                <span
+                                    class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">MongoDB</span>
+                            </div>
+                            <!-- Icono de ojo -->
+                            <a href="https://www.tienda-online.com" target="_blank"
+                                class="text-indigo-600 hover:text-sky-800 transition">
+                                <i class="fas fa-eye text-xl"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8d2987d0-992c-4dc4-bdc2-e99d496a0de2.png"
-                        alt="Aplicación de salud móvil con seguimiento de actividad y nutrición"
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d97276af-7308-41f1-aa26-c16658fc415b.png"
+                        alt="E-commerce moderno con diseño limpio y funcionalidades avanzadas"
                         class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">App de Salud</h3>
-                        <p class="text-gray-600 mb-4">Aplicación móvil para seguimiento de salud y bienestar.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">Flutter</span>
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">Firebase</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tienda Online</h3>
+                        <p class="text-gray-600 mb-4">Plataforma e-commerce con pasarela de pagos y gestión de
+                            inventario.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <!-- Tecnologías -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">React</span>
+                                <span
+                                    class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">Node.js</span>
+                                <span
+                                    class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">MongoDB</span>
+                            </div>
+                            <!-- Icono de ojo -->
+                            <a href="https://www.tienda-online.com" target="_blank"
+                                class="text-indigo-600 hover:text-indigo-800 transition">
+                                <i class="fas fa-eye text-xl"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ebb63516-4f39-4f11-870b-d9def304895f.png"
-                        alt="Dashboard empresarial con visualización de datos y análisis en tiempo real"
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d97276af-7308-41f1-aa26-c16658fc415b.png"
+                        alt="E-commerce moderno con diseño limpio y funcionalidades avanzadas"
                         class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Sistema de Gestión</h3>
-                        <p class="text-gray-600 mb-4">Plataforma de gestión empresarial con reporting avanzado.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">Vue.js</span>
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">Laravel</span>
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">MySQL</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tienda Online</h3>
+                        <p class="text-gray-600 mb-4">Plataforma e-commerce con pasarela de pagos y gestión de
+                            inventario.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <!-- Tecnologías -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">React</span>
+                                <span
+                                    class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">Node.js</span>
+                                <span
+                                    class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs">MongoDB</span>
+                            </div>
+                            <!-- Icono de ojo -->
+                            <a href="https://www.tienda-online.com" target="_blank"
+                                class="text-indigo-600 hover:text-indigo-800 transition">
+                                <i class="fas fa-eye text-xl"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -302,8 +307,7 @@
 
             <div class="text-center mt-12">
                 <a href="#contacto"
-                    class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-indigo-700 transition">Ver
-                    Más Proyectos</a>
+                    class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-indigo-700 transition">¡Contáctanos!</a>
             </div>
         </div>
     </section>
@@ -470,7 +474,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-800 mb-1">Oficina Central</h4>
-                                <p class="text-gray-600">Av. Tecnológica 1234, Ciudad Digital</p>
+                                <p class="text-gray-600">Jr. Los Diamantes 2584 Urb. San Carlos</p>
                             </div>
                         </div>
 
@@ -480,7 +484,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-800 mb-1">Teléfono</h4>
-                                <p class="text-gray-600">+1 234 567 890</p>
+                                <p class="text-gray-600">+51 914 639 227</p>
                             </div>
                         </div>
 
@@ -490,7 +494,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-800 mb-1">Email</h4>
-                                <p class="text-gray-600">contacto@techsolutions.com</p>
+                                <p class="text-gray-600">contacto@minddevperu.com</p>
                             </div>
                         </div>
                     </div>
@@ -536,7 +540,7 @@
                                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
                                 <input type="text" id="phone"
                                     class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-                                    placeholder="+1 234 567 890">
+                                    placeholder="+51 999 999">
                             </div>
 
                             <div>
@@ -579,7 +583,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-lg font-bold mb-4">TechSolutions</h3>
+                    <h3 class="text-lg font-bold mb-4">Minddev</h3>
                     <p class="text-gray-400">Transformamos ideas en soluciones tecnológicas para potenciar tu negocio en
                         la era digital.</p>
                 </div>
@@ -620,7 +624,8 @@
             </div>
 
             <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 TechSolutions. Todos los derechos reservados.</p>
+                <p class="text-gray-400 mb-4 md:mb-0">© <span id="year"></span> Minddev. Todos los derechos reservados.
+                </p>
                 <div class="flex space-x-6">
                     <a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidad</a>
                     <a href="#" class="text-gray-400 hover:text-white transition">Términos de Servicio</a>
@@ -629,53 +634,7 @@
         </div>
     </footer>
 
-    <script>
-        function submitForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
-
-            if (!name || !email || !message) {
-                alert('Por favor completa los campos requeridos');
-                return;
-            }
-
-            // Aquí iría el código para enviar el formulario a un servidor
-            alert('Gracias por contactarnos, ' + name + '. Nos pondremos en contacto contigo pronto.');
-            document.getElementById('contactForm').reset();
-        }
-
-        // Smooth scrolling para los enlaces
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Animación cuando los elementos son visibles
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    <script src="./JS/script.js"></script>
 </body>
 
 </html>
