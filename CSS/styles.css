@@ -97,3 +97,12 @@
      color: var(--primary);
      margin-bottom: 1rem;
  }
+
+ #toastSuccess,
+ #toastError {
+     transition: opacity 0.5s ease;
+     opacity: 0;
+     pointer-events: none;
+     /* Evita interacción mientras está oculto */
+     user-select: none;
+ }
