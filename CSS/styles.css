@@ -67,6 +67,8 @@
 
 
 
+
+
  .animate-marquee {
      display: inline-flex;
      animation: marquee 59s linear infinite;
