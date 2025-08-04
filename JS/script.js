@@ -66,3 +66,24 @@ document.querySelectorAll("section").forEach(section => observer.observe(section
 // Actualiza el año automáticamente
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 2500,
+    },
+    breakpoints: {
+        640: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 5 },
+    }
+});
+
