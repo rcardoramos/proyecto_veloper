@@ -1,44 +1,71 @@
-function submitForm() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const service = document.getElementById('service').value;
-    const message = document.getElementById('message').value;
+// Referencias DOM
+const form = document.getElementById("contactForm");
+const toastSuccess = document.getElementById("toastSuccess");
+const toastError = document.getElementById("toastError");
 
-    if (!name || !email || !message) {
-        alert('Por favor completa los campos requeridos');
-        return;
-    }
+function showToast(toastElement) {
+    toastElement.classList.remove("hidden");
+    toastElement.style.opacity = "1";
 
-    // Aquí iría el código para enviar el formulario a un servidor
-    alert('Gracias por contactarnos, ' + name + '. Nos pondremos en contacto contigo pronto.');
-    document.getElementById('contactForm').reset();
+    // Ocultar después de 4 segundos
+    setTimeout(() => {
+        toastElement.style.opacity = "0";
+        // Esperar animación de opacidad (0.5s) para ocultar
+        setTimeout(() => toastElement.classList.add("hidden"), 500);
+    }, 4000);
 }
 
-// Smooth scrolling para los enlaces
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" }
+    })
+        .then(response => {
+            if (response.ok) {
+                form.reset();
+                window.scrollTo({ top: form.offsetTop, behavior: "smooth" });
+                showToast(toastSuccess);
+            } else {
+                showToast(toastError);
+            }
+        })
+        .catch(() => {
+            showToast(toastError);
         });
+});
+
+// Smooth scroll para enlaces ancla
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute("href"));
+        if (target) target.scrollIntoView({ behavior: "smooth" });
     });
 });
 
-// Animación cuando los elementos son visibles
-const observerOptions = {
-    threshold: 0.1
-};
+// Animación con IntersectionObserver
+const observer = new IntersectionObserver(
+    (entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate-fade-in");
+                obs.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.1 }
+);
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
+document.querySelectorAll("section").forEach(section => observer.observe(section));
+
+// Actualiza el año automáticamente
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
@@ -59,3 +86,4 @@ const swiper = new Swiper(".mySwiper", {
         1024: { slidesPerView: 5 },
     }
 });
+
